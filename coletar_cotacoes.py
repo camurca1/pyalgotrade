@@ -102,8 +102,10 @@ def empilhar_dados(ativos):
                                    verify_integrity=False)
         except:
             print(f'{ativo} não encontrado.')
+    precos['datetime'] = pd.to_datetime(precos['datetime'])
     precos.rename(columns={'datetime': 'DT_REFER'}, inplace=True)
-    precos.set_index(['TckrSymb', 'DT_REFER'])
+    precos.set_index(['DT_REFER', 'TckrSymb'], inplace=True)
+    precos.sort_index(inplace=True)
     return precos
 
 
