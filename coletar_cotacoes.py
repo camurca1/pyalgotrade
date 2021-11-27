@@ -134,7 +134,7 @@ ativos = ativos_equities['TckrSymb'].tolist()
 timeframes = [mt5.TIMEFRAME_M1, mt5.TIMEFRAME_M5, mt5.TIMEFRAME_M15,
               mt5.TIMEFRAME_M30, mt5.TIMEFRAME_H1, mt5.TIMEFRAME_D1]
 
-atualizar_cotacoes(timeframes, ativos, False)
+atualizar_cotacoes(timeframes, ativos, True)
 
 precos_ativos = empilhar_dados(ativos)
 DATA_STORE = 'dados/assets.h5'
